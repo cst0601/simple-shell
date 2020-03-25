@@ -14,7 +14,7 @@ HEADERS := $(wildcard $(SRC)/*.h)
 UT_OBJECTS := $(filter-out $(OBJ)/main.o, $(OBJECTS))
 UT_HEADERS := $(wildcard $(TEST)/*.h)
 
-all: $(BIN)/main
+all: dirs $(BIN)/main
 
 # link main
 $(BIN)/main: $(OBJECTS)
