@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "parser.h"
+#include "execute.h"
 
 #define BUFFER_SIZE     1024
 #define ARG_VEC_SIZE    64
@@ -17,6 +18,7 @@ int main (int argc, char * argv[]) {
         parser(input_line, arg_vec);
         if (strcmp("exit", arg_vec[0]) == 0)
             exit(0);
+        execute(argv);
     }
 
     return 0;
