@@ -1,0 +1,4 @@
+
+TEST (Parser, parse) {
+    SUCCEED();
+}
