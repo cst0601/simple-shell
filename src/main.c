@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "parser.h"
+#include "parse.h"
 #include "execute.h"
 
 #define BUFFER_SIZE     1024
@@ -14,11 +14,13 @@ int main (int argc, char * argv[]) {
 
     while (1) {
         printf("chikuma@TEST csh $ ");
-        fgets(input_line, BUFFER_SIZE, stdin);
-        parser(input_line, arg_vec);
-        if (strcmp("exit", arg_vec[0]) == 0)
-            exit(0);
-        execute(argv);
+        if (fgets(input_line, BUFFER_SIZE, stdin) != NULL) {
+            parse(input_line, arg_vec);
+            if (strcmp(arg_vec[0], "exit") == 0) {
+                exit(0);
+            }
+            execute(arg_vec);
+        }
     }
 
     return 0;

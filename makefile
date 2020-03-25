@@ -1,5 +1,5 @@
 GCC=gcc
-CPPFLAGS=-std=c99
+CPPFLAGS=-std=c89
 LDFLAGS=
 LIBS=-lgtest -lpthread
 
